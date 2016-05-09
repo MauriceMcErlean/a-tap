@@ -1,0 +1,112 @@
+html, body {
+ 	-webkit-font-smoothing: antialiased;
+	font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.bar-nav .menu-btn {
+	font-size: 20px;
+	line-height: 58px;
+	float: left;
+	padding: 0 10px;
+}
+
+ul#venues {
+
+}
+
+ul#venues li {
+	background-color: #222;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+
+ul#venues li a {
+
+}
+
+ul#venues li .venue-content {
+	display: block;
+	width: 100%;
+	padding: 16px 18px;
+	overflow: hidden;
+	padding: 70px 30px;
+	background-color: rgba(00,00,00,0.5);
+	text-align: center;
+}
+
+ul#venues li .venue-content .venue-title {
+	font-size: 18px;
+	font-weight: 500;
+	color: #fff;
+	margin: 0 0 10px 0;
+}
+
+ul#venues li .venue-content .venue-info {
+	font-size: 15px;
+	font-weight: 400;
+	color: #fff;
+}
+
+ul#venues li .venue-content .venue-info span.open {
+	color: #77DC60;
+}
+
+ul#venues li .venue-content .venue-info span.closed {
+	color: #D63838;
+}
+
+.venue-heading {
+	height: 180px;
+	overflow: hidden;
+	position: relative;
+	background-color: #000;
+}
+
+.venue-heading h1 {
+	font-size: 28px;
+	font-weight: 600;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+	margin: 80px 0 0 0;
+	z-index: 99;
+	position: absolute;
+}
+
+.venue-heading img {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	object-position: center;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	opacity: 0.4;
+}
+
+.lol {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.loginbranding{
+	width:100%;
+}
+
+.searchText {
+	width:100%;
+	height:50px;
+	font-size: 1.5em;
+	text-align: center;
+}
+.searchcont{
+	background-color:#0F171E;
+}
+.searchcont h1{
+	color:white;
+	text-align: center;
+}
