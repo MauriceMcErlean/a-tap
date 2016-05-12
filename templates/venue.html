@@ -1,24 +1,10 @@
-<ion-view view-title="Venue">
+<ion-view view-title="{{playlist.title}}">
   <ion-content>
     <ion-list>
-      <div class="content" ng-show="venue.id=1">
-	      <div class="content">
-
-	        <ul id="venues">
-	         <a href="#/app/venues/{{venue.id}}">
-		        <li style="background-image: url({{venue.Image}})">
-		        <div class="venue-content">
-				<h2 class="venue-title">{{venue.title}}</h2>
-		        <p class="venue-info">{{venue.Address}} <span class="open">Open</span></p></div>
-	        </li>
-	        </a>
-	        </ul>
-	
-	       </div>
-      </ion-item> 
+      <ion-item ng-repeat="drink in drinks" href="#/app/venues/{{venue.id}}/{{drinks.id}}">
+        {{drinks.title}}
+      </ion-item>
     </ion-list>
   </ion-content>
 </ion-view>
-
-          <div class="content" ng-show="venue/venue.id=1">
 	   

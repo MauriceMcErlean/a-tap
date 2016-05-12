@@ -29,14 +29,44 @@ angular.module('starter.controllers', [])
 
 .controller('VenuesCtrl', function($scope) {
   $scope.venues = [
-    { title: 'Alibi', Address:' 23-31 Bradbury Place, Queen’s Quarter, Belfast', Image: 'img/venues/alibi.jpg', id: 1 },
-    { title: 'Box', Address:'2 Queens Quay, Belfast', Image: 'img/venues/box.png', id: 2 },
-    { title: 'Chinawhite', Address:'43 Franklin St, Belfast',Image: 'img/venues/chinawhite.jpg', id: 3 },
-    { title: 'Limelight', Address:'17 Ormeau Ave, Belfast',Image: 'img/venues/limelight.jpg', id: 4 },
-    { title: 'Ollies', Address:'The Merchant Hotel, 35-39 Waring St, Cathedral Quarter, Belfast', Image: 'img/venues/ollies.jpg', id: 5 },
-    { title: 'XS', Address:'Belmont Hotel, Rathfriland Road Banbridge', Image: 'img/venues/xs.png',id: 6 },
-    { title: 'El Divino', Address:'Mays Meadow, Belfast', Image: 'img/venues/eldivino.png', id: 7 }
-  ];
+        {
+         title: 'Alibi', 
+         Address:' 23-31 Bradbury Place, Queen’s Quarter, Belfast', 
+         Image: 'img/venues/alibi.jpg',
+         id: 1,
+          drinks:
+            [
+              {
+                title: 'Drink1',
+                id: '1',
+              },
+              {
+                title: 'drink2',
+                id: '2',
+
+              }
+            ]
+        },
+        {
+         title: 'Box', 
+         Address:'2 Queens Quay, Belfast', 
+         Image: 'img/venues/box.png',
+          id: 2,
+          drink:
+              [
+                {
+                  title: 'drink3',
+                  id: '3',
+
+                },
+                {
+                  title: 'drink4',
+                  id: '4',
+                }
+              ]
+        },
+
+      ];
 })
 
 .controller('VenueCtrl', function($scope, $stateParams) {
