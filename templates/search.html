@@ -1,16 +1,9 @@
-<ion-view view-title="Search">
-  <ion-content>
-  <div class = "searchcont">
-<input ng-model="searchText" class ="searchText" placeholder = "search for a venue">
-</div>
- <div class="content" ng-repeat="venue in venues | filter:searchText">
-	      <div class="content">
-	        <ul id="venues">
-		        <li style="background-image: url({{venue.Image}})">
-		        <div class="venue-content">
-				<h2 class="venue-title">{{venue.title}}</h2>
-		        <p class="venue-info">{{venue.Address}} <span class="open">Open</span></p></div>
-	        </li>
-	       </div>
-  </ion-content>
+<ion-view title="Search">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <ion-content>
+      <h1>Search</h1>
+    </ion-content>
 </ion-view>

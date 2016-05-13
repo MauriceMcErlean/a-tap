@@ -1,10 +1,9 @@
-<ion-view view-title="{{playlist.title}}">
+<ion-view view-title="order your drink">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="drink in drinks" href="#/app/venues/{{venue.id}}/{{drinks.id}}">
-        {{drinks.title}}
+      <ion-item ng-repeat="music in musics" href="#/app/venues/{{venueId}}/{{music.id}}">
+        {{music.title}}
       </ion-item>
     </ion-list>
   </ion-content>
 </ion-view>
-	   
