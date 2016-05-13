@@ -32,15 +32,15 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
-    .factory('MusicFactory', function() {
+    .factory('drinkFactory', function() {
 
       var venues = [
         {
-          title: 'Alibi', 
+         title: 'Alibi', 
          Address:' 23-31 Bradbury Place, Queen’s Quarter, Belfast', 
          Image: 'img/venues/alibi.jpg',
           id: 1,
-          musics:
+          drinks:
             [
               {
                 title: 'WKD',
@@ -59,7 +59,89 @@ angular.module('starter.controllers', [])
          Address:'2 Queens Quay, Belfast', 
          Image: 'img/venues/box.png',
           id: 2,
-          musics:
+          drinks:
+              [
+                {
+                  title: 'Shot of coke',
+                  price: '£99.50',
+                  id: '1',
+                },
+                {
+                  title: 'Buckyboooooo',
+                  price: '£3.50',
+                  id: '2',
+                }
+              ]
+        },
+        {
+         title: 'Chinawhite', 
+         Address:'43 Franklin St, Belfast',
+         Image: 'img/venues/chinawhite.jpg', 
+         id: 3,
+          drinks:
+              [
+                {
+                  title: 'Shot of coke',
+                  price: '£99.50',
+                  id: '1',
+                },
+                {
+                  title: 'Buckyboooooo',
+                  price: '£3.50',
+                  id: '2',
+                }
+              ]
+        },
+        {
+         title: 'Limelight', Address:'17 Ormeau Ave, Belfast',Image: 'img/venues/limelight.jpg', id: 4,
+          drinks:
+              [
+                {
+                  title: 'Shot of coke',
+                  price: '£99.50',
+                  id: '1',
+                },
+                {
+                  title: 'Buckyboooooo',
+                  price: '£3.50',
+                  id: '2',
+                }
+              ]
+        },
+        {
+         title: 'Ollies', Address:'The Merchant Hotel, 35-39 Waring St, Cathedral Quarter, Belfast', Image: 'img/venues/ollies.jpg', id: 5,
+          drinks:
+              [
+                {
+                  title: 'Shot of coke',
+                  price: '£99.50',
+                  id: '1',
+                },
+                {
+                  title: 'Buckyboooooo',
+                  price: '£3.50',
+                  id: '2',
+                }
+              ]
+        },
+        {title: 'XS', Address:'Belmont Hotel, Rathfriland Road Banbridge', Image: 'img/venues/xs.png',id: 6,
+          drinks:
+              [
+                {
+                  title: 'Shot of coke',
+                  price: '£99.50',
+                  id: '1',
+                },
+                {
+                  title: 'Buckyboooooo',
+                  price: '£3.50',
+                  id: '2',
+                }
+              ]
+        },
+        {
+         title: 'El Divino', Address:'Mays Meadow, Belfast', Image: 'img/venues/eldivino.png', id: 7,
+          drinks:
               [
                 {
                   title: 'Shot of coke',
@@ -76,8 +158,9 @@ angular.module('starter.controllers', [])
 
       ];
 
+
       var currentvenue = null,
-          currentMusic = null;
+          currentdrink = null;
 
       return {
         getvenues: function() {
@@ -95,11 +178,11 @@ angular.module('starter.controllers', [])
 
           return null;
         },
-        getMusic: function(venueId, musicId) {
+        getdrink: function(venueId, drinkId) {
           // You don't have the current venue in this function see the console log below
           console.log("Current venue is", currentvenue);
 
-          if (!venueId || !musicId) return null;
+          if (!venueId || !drinkId) return null;
 
           // Get the current venue with the venue Id grabbed from the state params
           var currentvenue = this.getvenue(venueId);
@@ -107,13 +190,13 @@ angular.module('starter.controllers', [])
           // Print current venue as of now
           console.log("Current venue after grabbing it with ID:\n", currentvenue);
 
-          // We want to loop through the musics array
-          for (var mu in currentvenue.musics) {
-            if (currentvenue.musics[mu].id == musicId) {
+          // We want to loop through the drinks array
+          for (var mu in currentvenue.drinks) {
+            if (currentvenue.drinks[mu].id == drinkId) {
 
-              // Assign musics at mu index to the current music
-              currentMusic = currentvenue.musics[mu];
-              return currentMusic;
+              // Assign drinks at mu index to the current drink
+              currentdrink = currentvenue.drinks[mu];
+              return currentdrink;
             }
           }
 
@@ -122,24 +205,24 @@ angular.module('starter.controllers', [])
       }
     })
 
-    .controller ('venuesCtrl', ['$scope', 'MusicFactory', function ($scope, MusicFactory) {
+    .controller ('venuesCtrl', ['$scope', 'drinkFactory', function ($scope, drinkFactory) {
 
-  $scope.venues = MusicFactory.getvenues();
+  $scope.venues = drinkFactory.getvenues();
 }])
 
-    .controller ('venueCtrl', ['$scope', '$stateParams', 'MusicFactory', function ($scope, $stateParams, MusicFactory) {
+    .controller ('venueCtrl', ['$scope', '$stateParams', 'drinkFactory', function ($scope, $stateParams, drinkFactory) {
 
-  // Here in when the venue selected by the Reggae id 1, show music and use the venue name in the title of the page.
-  var venue = MusicFactory.getvenue($stateParams.venueId);
+  // Here in when the venue selected by the Reggae id 1, show drink and use the venue name in the title of the page.
+  var venue = drinkFactory.getvenue($stateParams.venueId);
 
   $scope.venueId = $stateParams.venueId;
-  $scope.musics = venue.musics;
+  $scope.drinks = venue.drinks;
   $scope.title = venue.title;
 }])
 
-    .controller ('MusicCtrl', ['$scope', '$stateParams', 'MusicFactory', function ($scope, $stateParams, MusicFactory) {
-  var music = MusicFactory.getMusic($stateParams.venueId, $stateParams.musicId);
+    .controller ('drinkCtrl', ['$scope', '$stateParams', 'drinkFactory', function ($scope, $stateParams, drinkFactory) {
+  var drink = drinkFactory.getdrink($stateParams.venueId, $stateParams.drinkId);
 
-  console.log("Music after calling get music factory\n", music);
-  $scope.artist = music.artist;
+  console.log("drink after calling get drink factory\n", drink);
+  $scope.artist = drink.artist;
 }]);

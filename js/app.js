@@ -67,11 +67,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
       .state('app.singles', {
-        url: "/venues/:venueId/:musicId",
+        url: "/venues/:venueId/:drinkId",
         views: {
           'menuContent': {
-            templateUrl: "templates/music.html",
-            controller: 'MusicCtrl'
+            templateUrl: "templates/drink.html",
+            controller: 'drinkCtrl'
           }
         }
       });
